@@ -15,7 +15,7 @@ type DBConfig struct {
 func TestEnvConfig(t *testing.T) {
 	godotenv.Load("./test.env")
 	assert := assert.New(t)
-	var kConfig = InitializeConfig()
+	var kConfig = GetConfigInstance()
 
 	assert.Equal("Golang Common", kConfig.MustString("APPLICATION_NAME"), "Application name doesn't match")
 

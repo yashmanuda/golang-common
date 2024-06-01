@@ -7,6 +7,6 @@ import (
 )
 
 func TestLogger(t *testing.T) {
-	logger := InitializeLogger()
+	logger := GetLoggerInstance()
 	logger.Error().Stack().Err(errors.New("Error message")).Msg("Log via initialized logger")
 }
