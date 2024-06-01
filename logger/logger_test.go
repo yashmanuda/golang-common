@@ -6,13 +6,14 @@ import (
 )
 
 func TestLogger(t *testing.T) {
-	Logger.Debug("Debug")
-	Logger.Info("Info")
-	Logger.Warn("Warn")
-	Logger.Error("Error without error", nil)
-	Logger.Error("Error with error", errors.New("Error message"))
-	assertPanic(t, func() { Logger.Panic("Panic without error", nil) })
-	assertPanic(t, func() { Logger.Panic("Panic with error", errors.New("Error message")) })
+	logger := InitializeLogger()
+	logger.Debug("Debug")
+	logger.Info("Info")
+	logger.Warn("Warn")
+	logger.Error("Error without error", nil)
+	logger.Error("Error with error", errors.New("Error message"))
+	assertPanic(t, func() { logger.Panic("Panic without error", nil) })
+	assertPanic(t, func() { logger.Panic("Panic with error", errors.New("Error message")) })
 }
 
 func assertPanic(t *testing.T, toExecute func()) {
