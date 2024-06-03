@@ -33,7 +33,7 @@ func LoggingMiddleware(next http.Handler) http.Handler {
 			"Request completed",
 			"method", r.Method,
 			"url", r.URL.Path,
-			"duration", time.Since(start),
+			"duration", time.Since(start).Milliseconds(),
 			"status", wrappedWriter.statusCode,
 		)
 	})
