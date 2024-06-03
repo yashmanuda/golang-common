@@ -22,7 +22,7 @@ func (rw *WrappedResponseWriter) WriteHeader(code int) {
 func LoggingMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		start := time.Now()
-		wrappedWriter := &WrappedResponseWriter{ResponseWriter: w, statusCode: http.StatusOK}
+		wrappedWriter := &WrappedResponseWriter{ResponseWriter: w}
 		log.Info(
 			"Request started",
 			"method", r.Method,
