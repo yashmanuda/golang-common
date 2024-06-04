@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/yashmanuda/golang-common/graph/badge.svg?token=LF0C83KVFL)](https://codecov.io/gh/yashmanuda/golang-common)
+
 # Go Project
 
 Welcome to our Go project repository, designed to facilitate efficient configuration management, logging, and middleware operations. This project leverages environment-based configurations and provides robust logging functionalities.
